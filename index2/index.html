@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-examplehash" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@100;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <center>
+        <h3>Form Generator</h3>
+        <input style="width: 50%;text-align: center;" autofocus type="text" id="formNameInput" class="form-control"
+            placeholder="Enter Form Name here .." onkeypress="onpress(event)" onchange="generateCode()">
+        <button onclick="generateCode()" id="generateButton" class="btn btn-success">Generate O/P</button>
+        <button id="addRowButton" class="btn btn-primary">Add Row</button>
+    </center>
+    <hr>
+    <div class="container">
+        <table id="formTable" class="table">
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container code-container-row">
+        <div class="code-container">
+            <h5>Constants ..</h5>
+            <div class="card">
+                <pre id="codeContainer1"></pre>
+                <button class="btn btn-secondary copy-button" data-clipboard-target="#codeContainer1">
+                    <i class="far fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+
+        <div class="code-container">
+            <h5>Form Controls.ts ..</h5>
+            <div class="card">
+                <pre id="codeContainer2"></pre>
+                <button class="btn btn-secondary copy-button" data-clipboard-target="#codeContainer2">
+                    <i class="far fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+
+        <div class="code-container">
+            <h5>Form control html</h5>
+            <div class="card">
+
+                <table id="generatedTable" class="table">
+                    <tbody>
+                    </tbody>
+                </table>
+                <button class="btn btn-secondary copy-button" data-clipboard-target="#generatedTable">
+                    <i class="far fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

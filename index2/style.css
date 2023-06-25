@@ -1,0 +1,94 @@
+.container {
+    margin-bottom: 20px;
+  }
+  
+  .code-container-row {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .code-container {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  
+  .code-container h2 {
+    margin-bottom: 10px;
+  }
+  
+  .code-container pre {
+    white-space: pre-wrap;
+  }
+  
+  .code-container .copy-button {
+    margin-top: 10px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  @media (max-width: 576px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .code-container-row {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  
+    .code-container {
+      flex-basis: 100%;
+    }
+  }
+  
+
+input{
+    font-size: 13px !important;
+    text-align: center;
+}  
+
+#generateButton{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+#addRowButton{
+    position: absolute;
+    right: 25px;
+    top: 55px;
+}
+
+  .op{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .card{
+    padding: 15px;
+    font-family: 'Ysabeau Infant', sans-serif; 
+    color: black !important;
+    font-size: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: none;
+    width: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(154, 153, 153);
+}
+
+body{
+    font-family: 'Ysabeau Infant', sans-serif;  
+}
