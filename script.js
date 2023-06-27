@@ -78,12 +78,13 @@ function generateCode() {
 
         if (fieldName === '') return; // Skip empty field names
 
-        const camelCaseFieldName = fieldName.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
+        const camelCaseFieldName = toCamelCase(fieldName)
+        // .replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
         const kebabCaseFieldName = camelToKebabCase(camelCaseFieldName);
 
         signUpFormFields[camelCaseFieldName] = kebabCaseFieldName;
         // signUpFormFieldsString += `  ${camelCaseFieldName}: '${kebabCaseFieldName}',\n`;
-        signUpFormFieldsString += `  [${getFormName()}FormFields.${camelCaseFieldName}]: ['', [Validators.required]],',\n`;
+        signUpFormFieldsString += `  [${getFormName()}FormFields.${camelCaseFieldName}]: ['', [Validators.required]],\n`;
 
         const rowCode = ` [formControlName]="${getFormName()}FormFields.${camelCaseFieldName}"`;
 
@@ -128,7 +129,7 @@ function generateCode() {
 // Get the form name
 function getFormName() {
     const formName = document.getElementById('formNameInput').value.trim();
-    return formName !== '' ? formName.replace(/ /g, '-') : '';
+    return formName !== '' ? toCamelCase(formName) : '';
 }
 
 // Copy the code to the clipboard
@@ -159,4 +160,25 @@ function copyCode(event) {
 // Convert camel case to kebab case
 function camelToKebabCase(str) {
     return str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+function toCamelCase(str) {
+    // Replace non-alphanumeric characters with spaces
+    var modifiedStr = str.replace(/[^a-zA-Z0-9]/g, ' ');
+
+    // Split the modified string into words
+    var words = modifiedStr.split(' ');
+
+    // Convert the first letter of each word (except the first word) to uppercase
+    for (var i = 1; i < words.length; i++) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    }
+
+    // Join the words and remove spaces
+    var camelCaseStr = words.join('');
+
+    // Convert the first letter to lowercase
+    camelCaseStr = camelCaseStr.charAt(0).toLowerCase() + camelCaseStr.slice(1);
+
+    return camelCaseStr;
 }
