@@ -93,7 +93,7 @@ function generateCode() {
         const codeCell = document.createElement('td');
         codeCell.textContent = rowCode;
         const copyButtonCell = document.createElement('td');
-        copyButtonCell.innerHTML = `<button class="btn btn-secondary copy-button" data-clipboard-text="${rowCode}">
+        copyButtonCell.innerHTML = `<button class="btn btn-secondary copy-button template-copy" data-clipboard-text='${rowCode}'>
       <i class="bi bi-clipboard-data"></i>
         </button>`;
         rowElement.appendChild(fieldNameCell);

@@ -1,3 +1,17 @@
+::-webkit-scrollbar-track {
+  background: none;
+  width: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgb(154, 153, 153);
+}
 .container {
     margin-bottom: 20px;
   }
@@ -72,23 +86,23 @@ input{
     color: black !important;
     font-size: 15px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 0 5px;
+    transition: linear 250ms;
+    cursor: pointer;
+    padding-top: 40px;
+  }
+  .card:hover{
+    transform:translateY(-5px);
   }
 
-  ::-webkit-scrollbar-track {
-    background: none;
-    width: 8px;
-}
 
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgb(154, 153, 153);
-}
 
 body{
     font-family: 'Ysabeau Infant', sans-serif;  
+}
+
+.copy-button:not(.template-copy){
+  position: absolute;
+  right: 15px;
+  top: 0;
 }
